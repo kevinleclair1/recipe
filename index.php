@@ -8,7 +8,11 @@
 	   <?php get_search_form(); ?>
 	</div>
 	<div class="pageNavWrapper">
-		<?php wp_count_posts(); ?>
+		<p><?php
+		$total = wp_count_posts()->publish;
+		echo $total;
+		?> Recipes</p> 
+		<?php  wp_pagenavi(); ?>
 	</div>
     <div class="content">
     		<?php get_template_part( 'loop', 'index' );	?>

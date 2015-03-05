@@ -6,6 +6,15 @@ Version: 1.0
 Author: HackerYou
 Author URI: http://hackeryou.com
 */
+body {
+  width: 100%;
+  *zoom: 1; }
+  body:before, body:after {
+    content: "";
+    display: table; }
+  body:after {
+    clear: both; }
+
 /* =============================================================================
                    Normalize, border box and clearfix
    ========================================================================== */
@@ -178,9 +187,10 @@ body {
   margin: 0 auto; }
 
 .content {
+  display: inline;
   float: left;
-  width: 65%;
-  margin-right: 5%; }
+  width: 97.91667%;
+  margin: 0 1.04167%; }
 
 .full {
   width: 100%; }
@@ -325,6 +335,27 @@ footer {
   background-size: cover; }
   .hero #searchform {
     margin: 0 auto; }
+
+/* =============================================================================
+                   Recipe Nav
+   ========================================================================== */
+.wp-pagenavi {
+  display: inline-block; }
+
+.pageNavWrapper {
+  text-align: center; }
+  .pageNavWrapper p {
+    display: inline-block; }
+
+/* =============================================================================
+                   Recipe Loop
+   ========================================================================== */
+.post {
+  display: inline-block;
+  display: inline;
+  float: left;
+  width: 22.91667%;
+  margin: 0 1.04167%; }
 
 /* =============================================================================
                    Comment Styling

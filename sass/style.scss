@@ -7,6 +7,7 @@ Author: HackerYou
 Author URI: http://hackeryou.com
 */
 
+@import '_grid';
 
 /* =============================================================================
                    Normalize, border box and clearfix
@@ -53,9 +54,7 @@ body {
 }
 
 .content {
-  float:left;
-  width:65%;
-  margin-right: 5%;
+  @include column(12);
 
 }
 
@@ -232,6 +231,30 @@ footer {
   #searchform {
     margin: 0 auto;
   }
+}
+
+/* =============================================================================
+                   Recipe Nav
+   ========================================================================== */
+
+.wp-pagenavi {
+  display: inline-block;
+}
+.pageNavWrapper {
+  text-align: center;
+  p {
+    display: inline-block;
+  }
+}
+
+/* =============================================================================
+                   Recipe Loop
+   ========================================================================== */
+
+.post {
+  display: inline-block;
+  @include column(3);
+
 }
 
 /* =============================================================================
