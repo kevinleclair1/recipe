@@ -180,17 +180,17 @@ img.alignright {
    ========================================================================== */
 body {
   color: #C8C8C8;
-  background: #26272B; }
+  background: #26272B;
+  font-family: 'Source Sans Pro', sans-serif; }
 
 .container {
   max-width: 1200px;
   margin: 0 auto; }
 
 .content {
-  display: inline;
-  float: left;
-  width: 97.91667%;
-  margin: 0 1.04167%; }
+  width: 100%;
+  background: #F8F8F8;
+  padding: 15px; }
 
 .full {
   width: 100%; }
@@ -348,14 +348,58 @@ footer {
     display: inline-block; }
 
 /* =============================================================================
-                   Recipe Loop
+                   Recipe Loop Front Page
    ========================================================================== */
 .post {
   display: inline-block;
   display: inline;
   float: left;
   width: 22.91667%;
-  margin: 0 1.04167%; }
+  margin: 0 1.04167%;
+  background: white;
+  text-align: center; }
+  .post .entry-title a {
+    color: #BB9356; }
+  .post .post-category a {
+    font-style: italic; }
+
+/* =============================================================================
+                   Recipe Loop Front Page
+   ========================================================================== */
+.single .post {
+  display: block;
+  width: 100%;
+  margin: 0; }
+.single .heroWrapper {
+  padding: 150px 100px; }
+.single .entry-title {
+  font-size: 80px;
+  margin: 0;
+  color: white; }
+.single .entry-content {
+  text-align: left;
+  width: 50%;
+  margin: 0 auto;
+  color: black; }
+.single .content {
+  padding: 0; }
+.single .entry-utility {
+  padding: 20px; }
+  .single .entry-utility a {
+    color: #BB9356; }
+
+/* =============================================================================
+                   Widgets
+   ========================================================================== */
+.widget-container {
+  display: inline;
+  float: left;
+  width: 31.25%;
+  margin: 0 1.04167%;
+  padding: 20px; }
+  .widget-container ul {
+    padding: 0;
+    list-style: none; }
 
 /* =============================================================================
                    Comment Styling

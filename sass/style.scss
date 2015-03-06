@@ -46,6 +46,7 @@ img.alignright    { padding-left: 5px; }
 body {
   color: #C8C8C8;;
   background: #26272B;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .container {
@@ -54,8 +55,9 @@ body {
 }
 
 .content {
-  @include column(12);
-
+  width: 100%;
+  background: #F8F8F8;
+  padding: 15px;
 }
 
 .full {
@@ -248,12 +250,67 @@ footer {
 }
 
 /* =============================================================================
-                   Recipe Loop
+                   Recipe Loop Front Page
    ========================================================================== */
 
 .post {
   display: inline-block;
   @include column(3);
+  background: white;
+  text-align: center;
+  .entry-title a {
+    color: #BB9356;
+  }
+  .post-category a {
+    font-style: italic;
+  }
+}
+
+/* =============================================================================
+                   Recipe Loop Front Page
+   ========================================================================== */
+.single {
+  .post {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+  .heroWrapper {
+  padding: 150px 100px;
+  }
+  .entry-title {
+    font-size: 80px;
+    margin: 0;
+    color: white;
+  }
+  .entry-content {
+    text-align: left;
+    width: 50%;
+    margin: 0 auto;
+    color: black;
+  }
+  .content {
+    padding: 0;
+  }
+  .entry-utility {
+    padding: 20px;
+    a {
+      color: #BB9356;
+    }
+  }
+}
+
+/* =============================================================================
+                   Widgets
+   ========================================================================== */
+
+.widget-container {
+  @include column(4);
+  padding: 20px;
+  ul {
+    padding: 0;
+    list-style: none;
+  }
 
 }
 

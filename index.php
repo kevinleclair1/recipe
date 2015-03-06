@@ -14,10 +14,11 @@
 		?> Recipes</p> 
 		<?php  wp_pagenavi(); ?>
 	</div>
-    <div class="content">
+    <div class="content clearfix">
     		<?php get_template_part( 'loop', 'index' );	?>
     </div> <!--/.content -->
 
+	  <?php dynamic_sidebar('primary-widget-area'); ?> 
   </div> <!-- /.container -->
 </div> <!-- /.main -->
 

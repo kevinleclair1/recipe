@@ -1,5 +1,8 @@
 <?php get_header(); ?>
 
+<?php
+$src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+?>
 <div class="main">
   <div class="container">
 
@@ -7,12 +10,12 @@
       <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
         <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-          <h1 class="entry-title"><?php the_title(); ?></h1>
-
-          <div class="entry-meta">
-            <?php hackeryou_posted_on(); ?>
-          </div><!-- .entry-meta -->
-
+          <div style="background: url(<?php echo $src[0]; ?>)"class="heroWrapper">
+            <h1 class="entry-title"><?php the_title(); ?></h1>
+          </div>
+          <div class="entry-utility">
+            <?php hackeryou_posted_in(); ?>
+          </div><!-- .entry-utility -->
           <div class="entry-content">
             <?php the_content(); ?>
             <?php wp_link_pages(array(
@@ -21,10 +24,9 @@
             )); ?>
           </div><!-- .entry-content -->
 
-          <div class="entry-utility">
-            <?php hackeryou_posted_in(); ?>
-            <?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?>
-          </div><!-- .entry-utility -->
+          <div class="entry-meta">
+            <?php hackeryou_posted_on(); ?>
+          </div><!-- .entry-meta -->
         </div><!-- #post-## -->
 
         <div id="nav-below" class="navigation">
