@@ -8,7 +8,18 @@ Author URI: http://hackeryou.com
 */
 
 @import '_grid';
+$accent : #BB9356;
 
+@mixin underline {
+  content: '';
+  height: 5px;
+  width: 45px;
+  background: $accent;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 /* =============================================================================
                    Normalize, border box and clearfix
    ========================================================================== */
@@ -160,6 +171,9 @@ footer {
    display: inline-block;
    margin: 0;
    width: 20%;
+   a {
+    color: white;
+   }
  }
 .menu {
   padding: 0;
@@ -178,25 +192,26 @@ footer {
     font-size: 12px;
   }
 }
-
-#searchform {
-  display: inline-block;
-  margin-left: 60px;
-  background: rgba(0,0,0,0.5);
-  padding: 10px;
-  input {
-    background: none;
-    border: none;
-    color: #999999;
-  }
-  button {
-    -webkit-appearance: none;
-     -moz-appearance:    none;
-     appearance:         none;
-     border: none;
-     padding: 0;
-     background: none;
-     color: #999999;
+.nav {
+  #searchform {
+    display: inline-block;
+    margin-left: 60px;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    input {
+      background: none;
+      border: none;
+      color: #999999;
+    }
+    button {
+      -webkit-appearance: none;
+       -moz-appearance:    none;
+       appearance:         none;
+       border: none;
+       padding: 0;
+       background: none;
+       color: #999999;
+    }
   }
 }
 #menu-social {
@@ -232,6 +247,29 @@ footer {
   background-size: cover; 
   #searchform {
     margin: 0 auto;
+    font-size: 30px;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.8);
+    color: rgba(0,0,0,0.8);
+    display: inline-block;
+    padding: 10px;
+    button {
+      -webkit-appearance: none;
+       -moz-appearance:    none;
+       appearance:         none;
+       border: none;
+       padding: 0;
+       background: none;
+    }
+    input {
+      border: none;
+      background: none;
+      color: #666666;
+    }
+  }
+  .heroText {
+    color: white;
+    font-size: 50px;
   }
 }
 
@@ -267,13 +305,14 @@ footer {
 }
 
 /* =============================================================================
-                   Recipe Loop Front Page
+                   Recipe Loop Single Page
    ========================================================================== */
 .single {
   .post {
     display: block;
     width: 100%;
     margin: 0;
+    float: none;
   }
   .heroWrapper {
   padding: 150px 100px;
@@ -294,9 +333,66 @@ footer {
   }
   .entry-utility {
     padding: 20px;
+    background: #F2F2F2;
+    .post-categories {
+      padding: 0;
+      text-align: center;
+      margin: 0;
+      li {
+        display: inline-block;
+      }
+    }
     a {
       color: #BB9356;
+      margin: 0 20px;
     }
+    h3 {
+      margin-top: 0;
+    }
+  }
+  .printWrapper {
+    margin: 20px 0;
+    text-align: center;
+    a {
+      font-size: 20px;
+      color: #999999;
+      display: block;
+    }
+    .printText {
+      font-style: italic;
+      color: #BB9356
+    }
+  }
+}
+.postInfoWrapper {
+  background: #F2F2F2;
+}
+.postInfo {
+  width: 70%;
+  margin: 0 auto;
+  h3 {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #111;
+    position: relative;
+    margin-top: 0;
+    &:after {
+      @include underline;
+    }
+  }
+  .avatar {
+    border-radius: 50%;
+    border: 5px solid #DFDFDF; 
+    margin-bottom: 30px;
+  }
+}
+.tagsWrapper {
+  text-align: center;
+  padding: 30px 0;
+  a {
+    color: $accent;
+    text-decoration: underline;
+    margin: 0 5px;
   }
 }
 
@@ -313,6 +409,12 @@ footer {
   }
 
 }
+
+/* =============================================================================
+                   Recipe Browse Page
+   ========================================================================== */
+
+
 
 /* =============================================================================
                    Comment Styling
@@ -428,6 +530,24 @@ h3#reply-title { margin:18px 0; }
   width:auto;
   font-size:14px;
 }
+.form-submit {
+  #submit {
+    background: #bb9356; /* Old browsers */
+    background: -moz-linear-gradient(top,  #bb9356 0%, #cbad7f 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bb9356), color-stop(100%,#cbad7f)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #bb9356 0%,#cbad7f 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #bb9356 0%,#cbad7f 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #bb9356 0%,#cbad7f 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #bb9356 0%,#cbad7f 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bb9356', endColorstr='#cbad7f',GradientType=0 ); /* IE6-9 */
+    border: none;
+    margin-top: 10px;
+    color: white;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 3px;
+  }
+}
 #respond dl { margin:0 0 10px; }
 #respond dt {
   display:inline;
@@ -441,3 +561,52 @@ p.form-allowed-tags, .nocomments { display:none; }
 }
 .comment-meta a:active, .comment-meta a:hover, .reply a:hover, a.comment-edit-link:hover { color:#ff4b33; }
 #respond p, #comments-list ul #respond { margin:0; }
+
+.comment-author {
+  display: inline-block;
+  .avatar {
+    border: none;
+    margin-bottom: 0;
+    width: 50px;  
+  }
+}
+.comment-metadata {
+  display: inline-block;
+}
+
+.comment {
+  list-style: none;
+}
+.comments-area {
+  width: 50%;
+  margin: 0 auto;
+  .comment-body {
+    text-align: left;
+  }
+  .says {
+    display: none;
+  }
+  .comment-content {
+    background: white;
+    color: black;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    &:before {
+      content: '';
+      height: 20px;
+      width: 20px;
+      background: white;
+      position: absolute;
+      top: -20%;
+      transform: rotate(45deg);
+      left: 3%;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  .comment-meta {
+    margin-bottom: 20px;
+  }
+}

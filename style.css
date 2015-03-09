@@ -273,6 +273,8 @@ footer {
   display: inline-block;
   margin: 0;
   width: 20%; }
+  .logo a {
+    color: white; }
 
 .menu {
   padding: 0;
@@ -287,16 +289,16 @@ footer {
 #menu-main li {
   font-size: 12px; }
 
-#searchform {
+.nav #searchform {
   display: inline-block;
   margin-left: 60px;
   background: rgba(0, 0, 0, 0.5);
   padding: 10px; }
-  #searchform input {
+  .nav #searchform input {
     background: none;
     border: none;
     color: #999999; }
-  #searchform button {
+  .nav #searchform button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -334,7 +336,27 @@ footer {
   background: url('img/food hero.jpg') no-repeat center center;
   background-size: cover; }
   .hero #searchform {
-    margin: 0 auto; }
+    margin: 0 auto;
+    font-size: 30px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.8);
+    display: inline-block;
+    padding: 10px; }
+    .hero #searchform button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: none;
+      padding: 0;
+      background: none; }
+    .hero #searchform input {
+      border: none;
+      background: none;
+      color: #666666; }
+  .hero .heroText {
+    color: white;
+    font-size: 50px; }
 
 /* =============================================================================
                    Recipe Nav
@@ -364,12 +386,13 @@ footer {
     font-style: italic; }
 
 /* =============================================================================
-                   Recipe Loop Front Page
+                   Recipe Loop Single Page
    ========================================================================== */
 .single .post {
   display: block;
   width: 100%;
-  margin: 0; }
+  margin: 0;
+  float: none; }
 .single .heroWrapper {
   padding: 150px 100px; }
 .single .entry-title {
@@ -384,9 +407,63 @@ footer {
 .single .content {
   padding: 0; }
 .single .entry-utility {
-  padding: 20px; }
+  padding: 20px;
+  background: #F2F2F2; }
+  .single .entry-utility .post-categories {
+    padding: 0;
+    text-align: center;
+    margin: 0; }
+    .single .entry-utility .post-categories li {
+      display: inline-block; }
   .single .entry-utility a {
+    color: #BB9356;
+    margin: 0 20px; }
+  .single .entry-utility h3 {
+    margin-top: 0; }
+.single .printWrapper {
+  margin: 20px 0;
+  text-align: center; }
+  .single .printWrapper a {
+    font-size: 20px;
+    color: #999999;
+    display: block; }
+  .single .printWrapper .printText {
+    font-style: italic;
     color: #BB9356; }
+
+.postInfoWrapper {
+  background: #F2F2F2; }
+
+.postInfo {
+  width: 70%;
+  margin: 0 auto; }
+  .postInfo h3 {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #111;
+    position: relative;
+    margin-top: 0; }
+    .postInfo h3:after {
+      content: '';
+      height: 5px;
+      width: 45px;
+      background: #BB9356;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%); }
+  .postInfo .avatar {
+    border-radius: 50%;
+    border: 5px solid #DFDFDF;
+    margin-bottom: 30px; }
+
+.tagsWrapper {
+  text-align: center;
+  padding: 30px 0; }
+  .tagsWrapper a {
+    color: #BB9356;
+    text-decoration: underline;
+    margin: 0 5px; }
 
 /* =============================================================================
                    Widgets
@@ -401,6 +478,9 @@ footer {
     padding: 0;
     list-style: none; }
 
+/* =============================================================================
+                   Recipe Browse Page
+   ========================================================================== */
 /* =============================================================================
                    Comment Styling
    ========================================================================== */
@@ -550,6 +630,30 @@ h3#reply-title {
   width: auto;
   font-size: 14px; }
 
+.form-submit #submit {
+  background: #bb9356;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #bb9356 0%, #cbad7f 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bb9356), color-stop(100%, #cbad7f));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #bb9356 0%, #cbad7f 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #bb9356 0%, #cbad7f 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #bb9356 0%, #cbad7f 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #bb9356 0%, #cbad7f 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bb9356', endColorstr='#cbad7f',GradientType=0 );
+  /* IE6-9 */
+  border: none;
+  margin-top: 10px;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 3px; }
+
 #respond dl {
   margin: 0 0 10px; }
 
@@ -572,3 +676,43 @@ p.form-allowed-tags, .nocomments {
 
 #respond p, #comments-list ul #respond {
   margin: 0; }
+
+.comment-author {
+  display: inline-block; }
+  .comment-author .avatar {
+    border: none;
+    margin-bottom: 0;
+    width: 50px; }
+
+.comment-metadata {
+  display: inline-block; }
+
+.comment {
+  list-style: none; }
+
+.comments-area {
+  width: 50%;
+  margin: 0 auto; }
+  .comments-area .comment-body {
+    text-align: left; }
+  .comments-area .says {
+    display: none; }
+  .comments-area .comment-content {
+    background: white;
+    color: black;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: relative; }
+    .comments-area .comment-content:before {
+      content: '';
+      height: 20px;
+      width: 20px;
+      background: white;
+      position: absolute;
+      top: -20%;
+      transform: rotate(45deg);
+      left: 3%; }
+    .comments-area .comment-content p {
+      margin: 0; }
+  .comments-area .comment-meta {
+    margin-bottom: 20px; }

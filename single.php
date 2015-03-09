@@ -14,7 +14,8 @@ $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
             <h1 class="entry-title"><?php the_title(); ?></h1>
           </div>
           <div class="entry-utility">
-            <?php hackeryou_posted_in(); ?>
+            <h3>Categories</h3>
+            <?php echo get_the_category_list();?>
           </div><!-- .entry-utility -->
           <div class="entry-content">
             <?php the_content(); ?>
@@ -22,25 +23,30 @@ $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
               'before' => '<div class="page-link"> Pages: ',
               'after' => '</div>'
             )); ?>
+            <div class="printWrapper">
+              <a href="javascript:window.print()"><i class="fa fa-print"></i></a>
+              <a href="javascript:window.print()" class='printText'>Print Recipe</p></a>
+            </div>
           </div><!-- .entry-content -->
-
-          <div class="entry-meta">
-            <?php hackeryou_posted_on(); ?>
-          </div><!-- .entry-meta -->
-        </div><!-- #post-## -->
-
-        <div id="nav-below" class="navigation">
-          <p class="nav-previous"><?php previous_post_link('%link', '&larr; %title'); ?></p>
-          <p class="nav-next"><?php next_post_link('%link', '%title &rarr;'); ?></p>
-        </div><!-- #nav-below -->
-
-        <?php comments_template( '', true ); ?>
+        <div class="postInfoWrapper">
+          <div class="postInfo">
+            <div class="tagsWrapper">
+              <h3>Tags</h3>
+              <?php the_tags('', ' '); ?>
+            </div>
+            <p>Recipe By</p>
+            <h3 class='authorName'><?php echo get_the_author(); ?></h3>
+            <?php echo get_avatar(get_the_author_meta('user_email')); ?>
+            <h3><?php comments_number()?></h3>
+            <?php comments_template( '', true ); ?>
+          </div>
+        </div>
 
       <?php endwhile; // end of the loop. ?>
 
     </div> <!-- /.content -->
 
-    <?php get_sidebar(); ?>
+     <?php dynamic_sidebar('primary-widget-area'); ?> 
 
   </div> <!-- /.container -->
 </div> <!-- /.main -->
