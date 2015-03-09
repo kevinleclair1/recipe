@@ -201,7 +201,7 @@ a {
   text-decoration: none; }
 
 a:hover {
-  color: #D424B1; }
+  color: black; }
 
 /* paragraphs */
 p {
@@ -243,6 +243,9 @@ pre {
   border-radius: 4px;
   border: 1px solid #ccc; }
 
+#searchform input:focus {
+  outline: none; }
+
 /* =============================================================================
                    Sidebar
    ========================================================================== */
@@ -268,11 +271,13 @@ footer {
    ========================================================================== */
 .nav {
   margin: 20px auto; }
+  .nav a:hover {
+    color: white; }
 
 .logo {
   display: inline-block;
   margin: 0;
-  width: 20%; }
+  width: 17%; }
   .logo a {
     color: white; }
 
@@ -287,7 +292,8 @@ footer {
     text-transform: uppercase; }
 
 #menu-main li {
-  font-size: 12px; }
+  font-size: 12px;
+  margin: 0 5px; }
 
 .nav #searchform {
   display: inline-block;
@@ -317,6 +323,8 @@ footer {
   .icon:before {
     font-size: 20px;
     font-family: 'FontAwesome'; }
+  .icon:hover::before {
+    color: white; }
 
 .facebook:before {
   content: '\f09a'; }
@@ -326,6 +334,10 @@ footer {
 
 .instagram:before {
   content: '\f16d'; }
+
+.pageNavWrapper {
+  background: #F8F8F8;
+  color: #333333; }
 
 /* =============================================================================
                    Hero
@@ -356,6 +368,7 @@ footer {
       color: #666666; }
   .hero .heroText {
     color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     font-size: 50px; }
 
 /* =============================================================================
@@ -379,7 +392,8 @@ footer {
   width: 22.91667%;
   margin: 0 1.04167%;
   background: white;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 20px; }
   .post .entry-title a {
     color: #BB9356; }
   .post .post-category a {
@@ -398,7 +412,8 @@ footer {
 .single .entry-title {
   font-size: 80px;
   margin: 0;
-  color: white; }
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
 .single .entry-content {
   text-align: left;
   width: 50%;
